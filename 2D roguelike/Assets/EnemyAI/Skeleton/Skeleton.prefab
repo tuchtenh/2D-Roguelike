@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  damageText: {fileID: 1239933170640711194, guid: 5df281527e3cbcd499008f0283635b70, type: 3}
   animator: {fileID: 2561636097040771411}
 --- !u!114 &2424832571594209875
 MonoBehaviour:
