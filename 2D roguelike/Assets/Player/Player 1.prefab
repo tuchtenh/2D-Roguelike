@@ -220,6 +220,7 @@ MonoBehaviour:
   attackPoint: {fileID: 5371095060565441563}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attackRange: 0.33
-  attackDamage: 20
+  attackDamage: 21
+  attackRate: 0.5

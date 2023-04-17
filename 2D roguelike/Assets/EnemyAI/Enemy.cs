@@ -26,8 +26,8 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("hit");
         RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
 
-        //textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
-        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().bounds.center);
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
+        //textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().bounds.center);
 
         Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
         textTransform.SetParent(canvas.transform);
