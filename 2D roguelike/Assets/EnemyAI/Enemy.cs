@@ -12,10 +12,13 @@ public class Enemy : MonoBehaviour
 
     public Animator animator;
 
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage)
@@ -30,6 +33,7 @@ public class Enemy : MonoBehaviour
         textTransform.SetParent(canvas.transform);
 
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -44,6 +48,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Skeleton>().enabled = false;
         GetComponent<Enemy>().enabled = false;
+        GetComponentInChildren<Canvas>().enabled = false;
     }
 
 }
