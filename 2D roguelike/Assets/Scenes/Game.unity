@@ -13000,6 +13000,10 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9110397153584844601, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
 --- !u!1 &228209689
@@ -15571,6 +15575,10 @@ PrefabInstance:
     - target: {fileID: 8681257429529123198, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
       propertyPath: m_LinearDrag
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110397153584844601, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}

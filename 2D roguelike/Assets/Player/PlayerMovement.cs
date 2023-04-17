@@ -14,11 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     bool isMoving = false;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
