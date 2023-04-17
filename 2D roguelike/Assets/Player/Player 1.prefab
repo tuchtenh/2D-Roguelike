@@ -224,3 +224,5 @@ MonoBehaviour:
   attackRange: 0.33
   attackDamage: 21
   attackRate: 0.5
+  playerCurrentHealth: 0
+  healthBar: {fileID: 0}

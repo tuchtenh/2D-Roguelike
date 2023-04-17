@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -12,9 +13,19 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRange = 0.5f;
     public int attackDamage = 20;
-
     public float attackRate = 0.01f;
     float nextAttackTime = 0f;
+
+    public int playerCurrentHealth;
+    int playerMaxHealth = 100;
+    public HealthBar healthBar;
+
+    void Start()
+    {
+        playerCurrentHealth = playerMaxHealth;
+        healthBar.SetMaxHealth(playerMaxHealth);
+    }
+
 
     // Update is called once per frame
     void Update()
