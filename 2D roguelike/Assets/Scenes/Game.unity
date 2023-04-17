@@ -15584,6 +15584,10 @@ PrefabInstance:
       propertyPath: m_UseAutoMass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8681257429529123198, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9110397153584844601, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -16304,6 +16308,10 @@ PrefabInstance:
     - target: {fileID: 4157378949034660796, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157378949034660798, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5371095060565441563, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
       propertyPath: m_LocalPosition.x

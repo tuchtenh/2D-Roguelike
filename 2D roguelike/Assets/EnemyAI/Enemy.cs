@@ -30,12 +30,10 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy dead");
         animator.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Skeleton>().enabled = false;
         GetComponent<Enemy>().enabled = false;
-        //this.enabled = false;
     }
 
 }
