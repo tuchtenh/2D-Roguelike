@@ -11,13 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     Vector2 movement;
-    SpriteRenderer spriteRenderer;
 
     bool isMoving = false;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -48,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x > 0)
         {
-            spriteRenderer.flipX = false;
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
         else if (movement.x < 0)
         {
-            spriteRenderer.flipX = true;
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
     }
 
