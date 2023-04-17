@@ -27,7 +27,14 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement = movement.normalized;
 
-       
+        if (movement != Vector2.zero)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
 
         animator.SetBool("isMoving", isMoving);
 
@@ -38,15 +45,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        if (movement != Vector2.zero)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
 
         if (movement.x > 0)
         {
