@@ -7,7 +7,7 @@ using UnityEngine;
 public class DamageText : MonoBehaviour
 {
 
-    public float timeToLive = 0.5f;
+    public float timeToLive = 1f;
     public float floatSpeed = 250;
     public Vector3 floatDirection = new Vector3(0, 1, 0);
 
@@ -25,6 +25,7 @@ public class DamageText : MonoBehaviour
     {
         rTransform = GetComponent<RectTransform>();
         startingColor = textMesh.color;
+        Destroy(gameObject, timeToLive);
     }
 
     // Update is called once per frame
@@ -36,8 +37,5 @@ public class DamageText : MonoBehaviour
 
         textMesh.color = new Color(startingColor.r, startingColor.g, startingColor.b, 1 - (timeElapsed / timeToLive));
         textMesh.text = player.GetComponent<PlayerCombat>().attackDamage.ToString();
-
-        if (timeElapsed > timeToLive)
-            Destroy(gameObject);
     }
 }

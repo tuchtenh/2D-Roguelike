@@ -24,12 +24,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         animator.SetTrigger("hit");
-        RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
-
-        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
-
-        Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
-        textTransform.SetParent(canvas.transform);
+        
+        SpawnDamageText();
 
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -41,6 +37,15 @@ public class Enemy : MonoBehaviour
 
     }
 
+    void SpawnDamageText()
+    {
+        RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
+
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
+
+        Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
+        textTransform.SetParent(canvas.transform);
+    }
     void Die()
     {
         animator.SetBool("isDead", true);
@@ -48,6 +53,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Skeleton>().enabled = false;
         GetComponent<Enemy>().enabled = false;
         GetComponentInChildren<Canvas>().enabled = false;
+        Destroy(gameObject, 5f);
     }
 
 }
