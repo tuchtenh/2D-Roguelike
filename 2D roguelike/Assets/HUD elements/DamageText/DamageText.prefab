@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 1
-  floatSpeed: 150
+  floatSpeed: 50
   floatDirection: {x: 0, y: 1, z: 0}
   textMesh: {fileID: 1239933170640711197}
   player: {fileID: 4157378949034660792, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
