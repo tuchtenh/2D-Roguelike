@@ -81,7 +81,6 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
         data.attackRange = this.attackRange;
         data.attackDamage = this.attackDamage;
         data.attackRate = this.attackRate;
-
         data.position = this.transform.position;
     }
 }
