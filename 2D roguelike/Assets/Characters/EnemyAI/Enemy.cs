@@ -39,14 +39,14 @@ public class Enemy : MonoBehaviour
 
     void SpawnDamageText()
     {
-        //RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
+        RectTransform textTransform = Instantiate(damageText).GetComponent<RectTransform>();
 
-        //textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
 
-        // Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
-        //textTransform.SetParent(canvas.transform);
+        Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
+        textTransform.SetParent(canvas.transform);
 
-        Instantiate(damageText, transform.position, Quaternion.identity);
+        //Instantiate(damageText, transform.position, Quaternion.identity);
     }
     void Die()
     {

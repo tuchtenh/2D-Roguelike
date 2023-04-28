@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
-
-public class PlayerCombat : MonoBehaviour
+using UnityEngine.UIElements;
+public class PlayerCombat : MonoBehaviour, IDataPersistence
 {
 
     public Animator animator;
@@ -17,14 +17,14 @@ public class PlayerCombat : MonoBehaviour
     float nextAttackTime = 0f;
 
     public int playerCurrentHealth;
-    int playerMaxHealth = 100;
+    public int playerMaxHealth = 100;
     public HealthBar healthBar;
 
-    void Start()
-    {
-        playerCurrentHealth = playerMaxHealth;
-        healthBar.SetMaxHealth(playerMaxHealth);
-    }
+    //void Start()
+    //{
+    //    playerCurrentHealth = playerMaxHealth;
+    //    healthBar.SetMaxHealth(playerMaxHealth);
+    //}
 
 
     // Update is called once per frame
@@ -62,5 +62,26 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    public void LoadData(GameData data)
+    {
+        this.playerMaxHealth = data.maxHealth;
+        this.playerCurrentHealth = data.currentHealth;
+        this.attackRange = data.attackRange;
+        this.attackDamage = data.attackDamage;
+        this.attackRate = data.attackRate;
+
+        this.transform.position = data.position;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.maxHealth = this.playerMaxHealth;
+        data.currentHealth = this.playerCurrentHealth;
+        data.attackRange = this.attackRange;
+        data.attackDamage = this.attackDamage;
+        data.attackRate = this.attackRate;
+
+        data.position = this.transform.position;
     }
 }

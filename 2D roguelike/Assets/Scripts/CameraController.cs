@@ -6,8 +6,13 @@ public class CameraController : MonoBehaviour
 {
     public float FollowSpeed = 5f;
 
-    public Transform target;
+    private Transform target;
 
+
+    void Start()
+    {
+        target = GameObject.Find("Player 1").transform;
+    }
     // Update is called once per frame
     void Update()
     {
