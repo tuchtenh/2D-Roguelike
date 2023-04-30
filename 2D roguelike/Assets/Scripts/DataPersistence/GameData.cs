@@ -12,6 +12,7 @@ public class GameData
     public int attackDamage;
     public float attackRate;
     public Vector3 position;
+    public int level;
 
 
     // default values for when the game starts without loaded data
@@ -22,6 +23,7 @@ public class GameData
         attackRange = 0.5f;
         attackDamage = 20;
         attackRate = 1;
+        level = 1;
 
         position = Vector3.zero; ;
     }

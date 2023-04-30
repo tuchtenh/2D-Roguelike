@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4157378949034660797}
   - component: {fileID: 6407642956230432966}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,9 +221,5 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  attackRange: 0.33
-  attackDamage: 51
-  attackRate: 0.5
-  playerCurrentHealth: 0
-  playerMaxHealth: 100
-  healthBar: {fileID: 7956181513324683825, guid: d5791805f34b90c4a8bd6647750bee6d, type: 3}
+  playerStats: {fileID: 11400000, guid: a914fc5b40277434c83e405ce8f62f01, type: 2}
+  playerHealthBar: {fileID: -6788774720352471784, guid: 72ba10ff9b763bb4db031d3f2e65fcab, type: 3}

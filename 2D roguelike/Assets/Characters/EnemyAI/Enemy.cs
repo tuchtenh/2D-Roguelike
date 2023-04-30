@@ -23,10 +23,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        animator.SetTrigger("hit");
-        
         SpawnDamageText();
-
+        animator.SetTrigger("hit");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 
@@ -43,7 +41,7 @@ public class Enemy : MonoBehaviour
 
         textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.GetComponent<Collider2D>().transform.position);
 
-        Canvas canvas = GameObject.FindAnyObjectByType<Canvas>();
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
         textTransform.SetParent(canvas.transform);
 
         //Instantiate(damageText, transform.position, Quaternion.identity);
