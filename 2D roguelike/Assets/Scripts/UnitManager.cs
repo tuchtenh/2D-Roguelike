@@ -10,6 +10,10 @@ public class UnitManager : MonoBehaviour
     [SerializeField]
     private float skeletonInterval = 15f;
 
+    [SerializeField]
+    public int maxEnemies = 5;
+
+    private int enemiesSpawned = 0;
 
     void Start()
     {
@@ -20,7 +24,15 @@ public class UnitManager : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-4f, 4), Random.Range(-4f, 10f), 0), Quaternion.identity);
+        if(enemiesSpawned < maxEnemies)
+        {
+            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-4f, 4), Random.Range(-4f, 10f), 0), Quaternion.identity);
+            enemiesSpawned++;
+        }
+        
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }
+
+
+

@@ -15246,6 +15246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4157378949034660799, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6407642956230432966, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
       propertyPath: playerHealthBar
       value: 
@@ -15344,6 +15348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonPrefab: {fileID: 7448473133482514613, guid: 86b54ea945a4b9d408f4ea926ef94e55, type: 3}
   skeletonInterval: 5
+  maxEnemies: 3
 --- !u!1 &1031611344
 GameObject:
   m_ObjectHideFlags: 0
@@ -15492,7 +15497,7 @@ GameObject:
   - component: {fileID: 1110467753}
   - component: {fileID: 1110467752}
   m_Layer: 0
-  m_Name: SpeedBuff
+  m_Name: SpeedPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15830,7 +15835,7 @@ GameObject:
   - component: {fileID: 1682024246}
   - component: {fileID: 1682024245}
   m_Layer: 0
-  m_Name: HeakthPowerup
+  m_Name: HealthPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

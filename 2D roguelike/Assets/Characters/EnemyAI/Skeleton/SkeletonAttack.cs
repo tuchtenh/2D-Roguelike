@@ -8,8 +8,7 @@ public class SkeletonAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gameObject.GetComponentInParent<Skeleton>().animator.SetBool("isAttacking", true);
-            gameObject.GetComponentInParent<Skeleton>().SetAttacking(true);
+            gameObject.GetComponentInParent<Skeleton>().Attack();
         }
     }
 
@@ -17,7 +16,7 @@ public class SkeletonAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gameObject.GetComponentInParent<Skeleton>().animator.SetBool("isAttacking", false);
+            gameObject.GetComponentInParent<Skeleton>().StopAttack();
         }
     }
 }

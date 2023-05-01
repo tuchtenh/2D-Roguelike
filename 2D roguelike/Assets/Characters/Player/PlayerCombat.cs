@@ -38,16 +38,16 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                PlayerTakeDamage(5);
-            }
-            if (Input.GetKeyDown(KeyCode.Keypad0))
-            {
-                PlayerHeal(5);
-            }
         }
-        
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            PlayerTakeDamage(5);
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            PlayerHeal(5);
+        }
+
     }
 
     void Attack()
@@ -77,7 +77,6 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
         {
             Die();
         }
-
     }
 
     void Die()
@@ -87,10 +86,6 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
 
     public void PlayerHeal(int damage)
     {
-        //animator.SetTrigger("hit");
-
-        //SpawnDamageText();
-
         currentHealth += damage;
         if(currentHealth > maxHealth)
         {

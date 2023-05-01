@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Skeleton : MonoBehaviour
@@ -16,6 +17,7 @@ public class Skeleton : MonoBehaviour
     public int attackDamage = 5;
     public float attackRate = 0.25f;
 
+    float nextAttackTime = 0f;
 
     void Start()
     {
@@ -49,8 +51,16 @@ public class Skeleton : MonoBehaviour
         return isAttacking;
     }
 
-    public void SetAttacking(bool value)
+    public void Attack()
     {
-        isAttacking = value;
+        isAttacking = true;
+        animator.SetBool("isAttacking", true);
+
+    }
+    public void StopAttack()
+    {
+        animator.SetBool("isAttacking", false);
+        isAttacking = false;
+
     }
 }

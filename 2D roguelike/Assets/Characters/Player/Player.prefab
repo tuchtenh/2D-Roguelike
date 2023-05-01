@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 3618a83a4e5943544af858792752ae7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -221,5 +221,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  playerStats: {fileID: 11400000, guid: a914fc5b40277434c83e405ce8f62f01, type: 2}
+  maxHealth: 100
+  currentHealth: 0
+  attackRange: 1
+  attackDamage: 10
+  attackRate: 1
   playerHealthBar: {fileID: -6788774720352471784, guid: 72ba10ff9b763bb4db031d3f2e65fcab, type: 3}
