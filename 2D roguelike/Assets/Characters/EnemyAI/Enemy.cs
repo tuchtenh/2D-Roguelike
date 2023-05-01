@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
 
     public HealthBar healthBar;
+
 
     // Start is called before the first frame update
     void Start()
