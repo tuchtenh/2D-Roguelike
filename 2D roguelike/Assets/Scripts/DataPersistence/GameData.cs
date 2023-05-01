@@ -21,7 +21,7 @@ public class GameData
         maxHealth = 100;
         currentHealth = 80;
         attackRange = 0.5f;
-        attackDamage = 20;
+        attackDamage = 40;
         attackRate = 1;
         level = 1;
 

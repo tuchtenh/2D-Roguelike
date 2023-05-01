@@ -15480,7 +15480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407642956230432966, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
       propertyPath: attackDamage
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6407642956230432966, guid: d8e9a14755060a54ca8b4390e88a3b78, type: 3}
       propertyPath: playerHealthBar

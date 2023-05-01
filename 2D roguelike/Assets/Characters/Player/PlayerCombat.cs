@@ -15,7 +15,7 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
     public int maxHealth = 100;
     public int currentHealth;
     public float attackRange = 1f;
-    public int attackDamage = 10;
+    public int attackDamage = 40;
     public float attackRate = 1f;
 
     float nextAttackTime = 0f;

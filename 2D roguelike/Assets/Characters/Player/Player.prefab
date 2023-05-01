@@ -224,6 +224,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   attackRange: 1
-  attackDamage: 10
+  attackDamage: 40
   attackRate: 1
   playerHealthBar: {fileID: -6788774720352471784, guid: 72ba10ff9b763bb4db031d3f2e65fcab, type: 3}
