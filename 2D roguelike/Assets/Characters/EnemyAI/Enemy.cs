@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public List<GameObject> powerups;
 
     public int maxHealth = 100;
     int currentHealth;
@@ -56,6 +57,11 @@ public class Enemy : MonoBehaviour
         GetComponent<Enemy>().enabled = false;
         GetComponentInChildren<Canvas>().enabled = false;
         Destroy(gameObject, 5f);
+
+        int randomIndex = Random.Range(0, powerups.Count);
+        GameObject powerup = powerups[randomIndex];
+        GameObject powerupObj = Instantiate(powerup, transform.position, Quaternion.identity);
+        Destroy(powerupObj, 10f); // Destroy power-up after 10 seconds
     }
 
 }

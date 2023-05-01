@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -5,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 public class PlayerCombat : MonoBehaviour, IDataPersistence
 {
-
+    public static event Action OnPlayerDeath;
     public Animator animator;
 
     public Transform attackPoint;
@@ -82,6 +83,7 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
     void Die()
     {
         Debug.Log("Player dead");
+        OnPlayerDeath?.Invoke();
     }
 
     public void PlayerHeal(int damage)
