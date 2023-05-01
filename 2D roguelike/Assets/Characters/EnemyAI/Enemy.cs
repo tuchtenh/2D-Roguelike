@@ -55,6 +55,8 @@ public class Enemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Skeleton>().enabled = false;
         GetComponent<Enemy>().enabled = false;
+        GetComponent<Skeleton>().SetIsAttacking(false);
+        gameObject.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
         GetComponentInChildren<Canvas>().enabled = false;
         Destroy(gameObject, 5f);
 

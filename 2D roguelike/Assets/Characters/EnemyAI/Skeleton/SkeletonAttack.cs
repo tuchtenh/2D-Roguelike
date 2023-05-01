@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SkeletonAttack : MonoBehaviour
 {
+    float nextAttackTime = 0f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            gameObject.GetComponentInParent<Skeleton>().Attack();
+        {      
+            InvokeRepeating("StartAttacking", 0f, 3f);
         }
     }
 
@@ -16,7 +17,14 @@ public class SkeletonAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            CancelInvoke("StartAttacking");
             gameObject.GetComponentInParent<Skeleton>().StopAttack();
         }
+    }
+
+    void StartAttacking()
+    {
+        gameObject.GetComponentInParent<Skeleton>().Attack();
+        nextAttackTime = Time.time + 1f / gameObject.GetComponentInParent<Skeleton>().attackRate;
     }
 }

@@ -11,13 +11,10 @@ public class Skeleton : MonoBehaviour
     public DetectionZone detectionZone;
     Rigidbody2D rb;
 
-    public Collider2D swordCollider;
-    public Collider2D triggerArea;
     private bool isAttacking;
     public int attackDamage = 5;
-    public float attackRate = 0.25f;
+    public float attackRate = 1f;
 
-    float nextAttackTime = 0f;
 
     void Start()
     {
@@ -50,17 +47,19 @@ public class Skeleton : MonoBehaviour
     {
         return isAttacking;
     }
+    public void SetIsAttacking(bool value)
+    {
+        isAttacking = value;
+    }
 
     public void Attack()
     {
         isAttacking = true;
-        animator.SetBool("isAttacking", true);
+        animator.SetTrigger("Attack");
 
     }
     public void StopAttack()
     {
-        animator.SetBool("isAttacking", false);
         isAttacking = false;
-
     }
 }
