@@ -9,7 +9,13 @@ public class Skeleton : MonoBehaviour
     public float moveSpeed = 500f;
     public DetectionZone detectionZone;
     Rigidbody2D rb;
-    
+
+    public Collider2D swordCollider;
+    public Collider2D triggerArea;
+    private bool isAttacking;
+    public int attackDamage = 5;
+    public float attackRate = 0.25f;
+
 
     void Start()
     {
@@ -17,7 +23,7 @@ public class Skeleton : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (detectionZone.detectedObjects.Count > 0)
+        if (detectionZone.detectedObjects.Count > 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("skeleton_attack"))
         {
             Vector2 direction = (detectionZone.detectedObjects[0].transform.position - transform.position ).normalized;
             if (direction.x > 0)
@@ -37,5 +43,14 @@ public class Skeleton : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     }
+    
+    public bool IsAttacking()
+    {
+        return isAttacking;
+    }
 
+    public void SetAttacking(bool value)
+    {
+        isAttacking = value;
+    }
 }
