@@ -17,6 +17,7 @@ public class UnitManager : MonoBehaviour
 
     void Start()
     {
+        maxEnemies = Random.Range(3, 7);
         StartCoroutine(spawnEnemy(skeletonInterval, skeletonPrefab));
     }
 
