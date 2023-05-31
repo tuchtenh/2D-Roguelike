@@ -84,6 +84,7 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
     {
         Debug.Log("Player dead");
         OnPlayerDeath?.Invoke();
+        DataPersistenceManager.instance.NewGame();
     }
 
     public void PlayerHeal(int damage)
@@ -114,7 +115,7 @@ public class PlayerCombat : MonoBehaviour, IDataPersistence
         this.transform.position = data.position;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         data.maxHealth = this.maxHealth;
         data.currentHealth = this.currentHealth;

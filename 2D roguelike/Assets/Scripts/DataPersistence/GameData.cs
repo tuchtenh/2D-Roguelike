@@ -25,6 +25,6 @@ public class GameData
         attackRate = 1;
         level = 1;
 
-        position = Vector3.zero; ;
+        position = Vector3.zero;
     }
 }
